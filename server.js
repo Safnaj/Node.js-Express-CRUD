@@ -2,6 +2,7 @@ require('./modal/db');
 
 const express = require('express');
 const path = require('path');
+const exphbs = require('express-handlebars');
 const employeeController = require('./controller/employeeController');
 
 var app = express();
