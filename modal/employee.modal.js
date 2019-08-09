@@ -19,4 +19,4 @@ var employeeSchema = new mongoose.Schema({
 
 mongoose.model('Employee',employeeSchema);
 
-//Video 25:52
+//Video 29:06
