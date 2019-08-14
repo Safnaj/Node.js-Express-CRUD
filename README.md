@@ -7,3 +7,6 @@ Technologies :
 * Node.js
 * Handlebars
 * MongoDB
+
+Contributors :
+* Safnaj
