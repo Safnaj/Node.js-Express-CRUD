@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 var employeeSchema = new mongoose.Schema({
 
     fullName :{
-        type: String
+        type: String,
+        required: 'This field is Required'
     },
     email :{
         type: String
@@ -19,4 +20,4 @@ var employeeSchema = new mongoose.Schema({
 
 mongoose.model('Employee',employeeSchema);
 
-//Video 29:06
+//Video 34:00
