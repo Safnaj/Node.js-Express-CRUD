@@ -30,6 +30,7 @@ function insertRecord(req,res){
      }); 
 }
 
+//Employee List
 router.get('/list',(req,res)=>{
     res.json('from list');
 });
