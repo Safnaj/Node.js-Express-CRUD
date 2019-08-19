@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//Creating Mongo database schema
 var employeeSchema = new mongoose.Schema({
 
     fullName :{
