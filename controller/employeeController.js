@@ -33,6 +33,15 @@ function insertRecord(req,res){
 //Employee List
 router.get('/list',(req,res)=>{
     res.json('from list');
+    Employee.find((err,docs)=> {
+        if(!err){
+            res.render("employee/list",{
+                list: docs
+            });
+        }else{
+            console.log("Error in Retrieving Employee List : "+err);
+        }
+    });
 });
 
 module.exports = router;
