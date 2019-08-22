@@ -1,22 +1,23 @@
-<h3>{{viewTitile}}</h3>
+<h3>{{viewTitle}}</h3>
 <hr>
 <form action="/employee" method="POST" autocomplete="off">
     <div class="form-group">
         <label>Full Name</label>
-        <input type="text" class="form-control" name="fullName" placeholder="Enter Name">
+        <input type="text" class="form-control" name="fullName" placeholder="Enter Name" value="{{employee.fullName}}">
+        <div class="text-danger">{{employee.fullNameError}}</div> <!--Validations-->
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="text" class="form-control" name="email" placeholder="Enter Email">
+        <input type="text" class="form-control" name="email" placeholder="Enter Email" value="{{employee.email}}">
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Mobile</label>
-            <input type="text" class="form-control" name="mobile" placeholder="Enter Mobile">
+            <input type="text" class="form-control" name="mobile" placeholder="Enter Mobile" value="{{employee.mobile}}">
         </div>
         <div class="form-group col-md-6">
             <label>City</label>
-            <input type="text" class="form-control" name="city" placeholder="Enter City">
+            <input type="text" class="form-control" name="city" placeholder="Enter City" value="{{employee.city}}">
         </div>
     </div>
     <div class="form-group">
