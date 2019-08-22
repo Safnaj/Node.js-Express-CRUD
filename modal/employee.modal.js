@@ -21,5 +21,4 @@ var employeeSchema = new mongoose.Schema({
 
 mongoose.model('Employee',employeeSchema);
 
-//Video 41:00
-//Havent Implemented Validations
+//Video 43:00
