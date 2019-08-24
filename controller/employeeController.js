@@ -10,6 +10,7 @@ router.get('/',(req,res)=>{
     });
 });
 
+//Post
 router.post('/',(req,res)=>{
     insertRecord(req,res);
 });
@@ -23,6 +24,17 @@ router.get('/list',(req,res)=>{
             });
         }else{
             console.log("Error in Retrieving Employee List : "+err);
+        }
+    });
+});
+
+router.get('/:id',(req,res)=>{
+    Employee.findById(req.params.id,(err, doc)=>{
+        if(!err){
+            res.render("employees/addOrEdit",{
+                viewTitle: "Update Employee",
+                employee: doc
+            });
         }
     });
 });

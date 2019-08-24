@@ -9,6 +9,7 @@ Employee List
             <td>Email</td>
             <td>Mobile</td>
             <td>City</td>
+            <td>Actions</td>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +20,7 @@ Employee List
             <td>{{this.mobile}}</td>
             <td>{{this.city}}</td>
             <td>
-                <a><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
                 <a><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
             </td>
         </tr>
