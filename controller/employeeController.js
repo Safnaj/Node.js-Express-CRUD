@@ -31,6 +31,7 @@ router.get('/list',(req,res)=>{
     });
 });
 
+//Select By ID
 router.get('/:id',(req,res)=>{
     Employee.findById(req.params.id,(err, doc)=>{
         if(!err){
@@ -42,6 +43,18 @@ router.get('/:id',(req,res)=>{
     });
 });
 
+//Delete Route
+router.get('/delete/:id', (req, res)=>{
+    Employee.findByIdAndRemove(req.params.id, (err, doc)=>{
+        if(!err){
+            res.redirect('/employee/list'); //Redirect After Delete
+        }
+        else{
+            console.log('Error in Employee Delete '+err);
+        }
+    })
+})
+
 
 //Insert Function
 function insertRecord(req,res){
@@ -52,7 +65,7 @@ function insertRecord(req,res){
      employee.city = req.body.city;
      employee.save((err, doc)=>{
          if(!err)
-            res.redirect('employee/list');
+            res.redirect('employee/list'); //Redirect After Insert
          else{
              if(err.name == 'ValidationError'){
                  handleValidationError(err,req.body);
@@ -70,7 +83,7 @@ function insertRecord(req,res){
 function updateRecord(req, res){
     Employee.findOneAndUpdate({ _id: req.body._id},req.body,{new: true},(err, doc)=>{
         if(!err){
-            res.redirect('employee/list');
+            res.redirect('employee/list'); //Redirect After Update
         }else{
             if(err.name == 'ValidationError'){
                 handleValidationError(err, req.body);
