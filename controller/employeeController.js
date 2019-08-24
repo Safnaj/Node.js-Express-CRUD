@@ -11,8 +11,11 @@ router.get('/',(req,res)=>{
 });
 
 //Post
-router.post('/',(req,res)=>{
-    insertRecord(req,res);
+router.post('/',(req, res)=>{
+    if(req.body._id == '')
+        insertRecord(req, res); //Function Written below
+    else
+        updateRecord(req, res);
 });
 
 //Employee List
@@ -61,6 +64,26 @@ function insertRecord(req,res){
              console.log('Error in Inserting Record : '+err);
          }   
      }); 
+}
+
+//Update Function
+function updateRecord(req, res){
+    Employee.findOneAndUpdate({ _id: req.body._id},req.body,{new: true},(err, doc)=>{
+        if(!err){
+            res.redirect('employee/list');
+        }else{
+            if(err.name == 'ValidationError'){
+                handleValidationError(err, req.body);
+                res.render("employees/addOrEdit",{
+                    viewTitle: 'Update Employee',
+                    employee: req.body
+                });
+            }
+            else{
+                console.log('Error During Record Update : '+err);
+            }
+        }
+    });
 }
 
 function handleValidationError(err,body){
