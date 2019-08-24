@@ -5,7 +5,7 @@ var employeeSchema = new mongoose.Schema({
 
     fullName :{
         type: String,
-        required: 'This field is Required'
+        required: 'This field is Required' //Validating Required
     },
     email :{
         type: String
@@ -20,5 +20,3 @@ var employeeSchema = new mongoose.Schema({
 }) ;
 
 mongoose.model('Employee',employeeSchema);
-
-//Video 43:00

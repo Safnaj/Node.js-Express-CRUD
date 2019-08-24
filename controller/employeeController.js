@@ -55,7 +55,6 @@ router.get('/delete/:id', (req, res)=>{
     })
 })
 
-
 //Insert Function
 function insertRecord(req,res){
      var employee = new Employee(); 
@@ -99,6 +98,7 @@ function updateRecord(req, res){
     });
 }
 
+//Handling Validation Errors
 function handleValidationError(err,body){
     for(field in err.errors)
     {
